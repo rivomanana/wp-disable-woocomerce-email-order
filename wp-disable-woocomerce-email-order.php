@@ -8,9 +8,6 @@
 
 add_action('woocommerce_email', function(WC_Emails $args){
     $emails = $args->emails;
-    //shop_order
-    //[originalaction] => editpost
-    //[order_status] => wc-completed
     if ( isset($_POST['post_ID']) and isset($_POST['post_type']) ){
         if ( 'shop_order' == $_POST['post_type'] and 'editpost' == $_POST['originalaction'] and 'wc-completed' == $_POST['order_status'] ){
             $order_id = $_POST['post_ID'];
